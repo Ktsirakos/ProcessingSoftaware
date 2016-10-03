@@ -28,23 +28,6 @@ void setup()
 void draw()
 {
   
-  //if(state == State.TRASMITTING){
-  //  println("We are getting results!");
-  //}else{
-  //  println("Idle");
-  //}
-  if ( myPort.available() > 0) 
-  {  // If data is available,
-  x = myPort.readStringUntil(' ');         // read it and store it in val
-  y = myPort.readStringUntil(' ');  
-  z = myPort.readStringUntil('\n');
-  //f(x != null && y != null && z !=null) output.print(x + "." + y + "." + z); //print it out in the console
-  }
-  
-  if(x != null) print(x + " ");
-  if(y != null) print(y + " ");
-  if(z != null) print(z);
-  
   //rect(startButton.x ,  startButton.y , startButton.Width , startButton.Height); 
   //if(startButton.isPressed()){
   //  counter++;
@@ -59,6 +42,26 @@ void draw()
   //    fill(0 , 255 , 0);
   //    state = State.IDLE;
   //  }
+  
+  
+  //if(state == State.TRASMITTING){
+      if ( myPort.available() > 0) 
+          {  // If data is available,
+          x = myPort.readStringUntil(' ');         // read it and store it in val
+          y = myPort.readStringUntil(' ');  
+          z = myPort.readStringUntil('\n');
+          //f(x != null && y != null && z !=null) output.print(x + "." + y + "." + z); //print it out in the console
+          }
+          
+  if(x != null) print(x + " ");
+  if(y != null) print(y + " ");
+  if(z != null) print(z);
+  
+  //}else{
+  //  println("Idle");
+  //}
+
+  
 }
 
 void keyPressed(){
